@@ -58,11 +58,11 @@ All output is written to a `.tavily/` directory to avoid flooding context.
 
 | Command | Use When | Key Flags |
 |---------|----------|-----------|
-| `tvly search` | No specific URL yet — find sources and answer questions | `--depth`, `--max-results`, `--time-range`, `--include-raw-content` |
-| `tvly extract` | Have URL(s) — pull clean content (up to 20 per call) | `--extract-depth`, `--query`, `--chunks-per-source` |
-| `tvly map` | Need to discover URLs on a large site | `--limit`, `--instructions`, `--max-depth` |
-| `tvly crawl` | Need bulk content from a site section | `--max-depth`, `--max-breadth`, `--output-dir` |
-| `tvly research` | Need comprehensive, multi-source analysis | `--model`, `--stream`, `status` / `poll` |
+| `tvly search` | No specific URL yet — find sources and answer questions | `--client-name opencode`, `--depth`, `--max-results`, `--time-range`, `--include-raw-content` |
+| `tvly extract` | Have URL(s) — pull clean content (up to 20 per call) | `--client-name opencode`, `--extract-depth`, `--query`, `--chunks-per-source` |
+| `tvly map` | Need to discover URLs on a large site | `--client-name opencode`, `--limit`, `--instructions`, `--max-depth` |
+| `tvly crawl` | Need bulk content from a site section | `--client-name opencode`, `--max-depth`, `--max-breadth`, `--output-dir` |
+| `tvly research` | Need comprehensive, multi-source analysis | `--client-name opencode`, `--model`, `--stream`, `status` / `poll` |
 
 ## Links
 
