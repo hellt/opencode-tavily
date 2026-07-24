@@ -56,23 +56,29 @@ The `tvly login` opens the browser for authentication without prompting. This is
 
 ## Organization
 
-Create a `.tavily/` folder in the working directory to store results unless a user specifies to return in context. Add `.tavily/` to `.gitignore` if not already there. Always use `-o` or `--output-dir` to write directly to file (avoids flooding context):
+Store results in `.tavily/` unless a user specifies to return in context. Before writing any output there, ensure the directory exists (`mkdir -p` is a no-op when it already exists):
 
 ```bash
-# Search the web (most common operation)
-tvly search "your query" --json -o .tavily/search-{query}.json
+mkdir -p .tavily
+```
+
+Add `.tavily/` to `.gitignore` if not already there. Always use `-o` or `--output-dir` to write directly to file (avoids flooding context):
+
+```bash
+# Ensure output dir exists, then run a command
+mkdir -p .tavily && tvly search "your query" --json -o .tavily/search-{query}.json
 
 # Extract page content
-tvly extract "https://example.com" --json -o .tavily/{site}-{path}.json
+mkdir -p .tavily && tvly extract "https://example.com" --json -o .tavily/{site}-{path}.json
 
 # Map all URLs on a site
-tvly map "https://example.com" --json -o .tavily/{site}-urls.json
+mkdir -p .tavily && tvly map "https://example.com" --json -o .tavily/{site}-urls.json
 
 # Crawl a site
-tvly crawl "https://docs.example.com" --output-dir .tavily/docs/
+mkdir -p .tavily && tvly crawl "https://docs.example.com" --output-dir .tavily/docs/
 
 # Deep research
-tvly research "your research topic" --json -o .tavily/research-{topic}.json
+mkdir -p .tavily && tvly research "your research topic" --json -o .tavily/research-{topic}.json
 ```
 
 Examples:
