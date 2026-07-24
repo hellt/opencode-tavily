@@ -13,7 +13,7 @@ export const plugin: Plugin = async () => {
       // @ts-expect-error -- skills is a new opencode feature, types not yet updated
       input.skills.paths ??= [];
       input.instructions.push(
-        join(current_dir, "skills", "tavily-cli", "rules", "install.md"),
+        join(current_dir, "skills", "tavily", "rules", "install.md"),
       );
       // @ts-expect-error -- skills is a new opencode feature, types not yet updated
       input.skills.paths.push(join(current_dir, "skills"));
