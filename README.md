@@ -47,7 +47,7 @@ If `TAVILY_API_KEY` is set in your environment, the plugin automatically passes 
 This plugin registers the Tavily CLI skill with OpenCode. Once installed, the agent can:
 
 - **Search** the web with optional content extraction
-- **Scrape / Extract** any webpage to clean markdown, HTML, or structured data
+- **Extract** any webpage to clean markdown or text
 - **Map** all URLs on a website
 - **Crawl** entire websites recursively
 - **Research** — AI-powered deep research with citations
@@ -58,11 +58,11 @@ All output is written to a `.tavily/` directory to avoid flooding context.
 
 | Command | Use When | Key Flags |
 |---------|----------|-----------|
-| `tvly search` | No specific URL yet — find sources and answer questions | `--search-depth`, `--max-results`, `--time-range` |
-| `tvly extract` | Have a URL — pull clean content | `--extract-depth`, `--query`, `--chunks-per-source` |
-| `tvly map` | Need to discover URLs on a large site | `--limit`, `--search` |
+| `tvly search` | No specific URL yet — find sources and answer questions | `--depth`, `--max-results`, `--time-range`, `--include-raw-content` |
+| `tvly extract` | Have URL(s) — pull clean content (up to 20 per call) | `--extract-depth`, `--query`, `--chunks-per-source` |
+| `tvly map` | Need to discover URLs on a large site | `--limit`, `--instructions`, `--max-depth` |
 | `tvly crawl` | Need bulk content from a site section | `--max-depth`, `--max-breadth`, `--output-dir` |
-| `tvly research` | Need comprehensive, multi-source analysis | `--model`, `--stream` |
+| `tvly research` | Need comprehensive, multi-source analysis | `--model`, `--stream`, `status` / `poll` |
 
 ## Links
 

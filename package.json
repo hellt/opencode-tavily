@@ -6,7 +6,9 @@
   "main": "index.ts",
   "files": [
     "index.ts",
-    "skills"
+    "skills",
+    "LICENSE",
+    "README.md"
   ],
   "keywords": [
     "opencode",

@@ -1,4 +1,6 @@
 node_modules/
 dist/
+.tavily/
 .DS_Store
 *.log
+*.tsbuildinfo
