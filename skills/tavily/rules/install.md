@@ -55,8 +55,10 @@ export TAVILY_API_KEY="tvly-YOUR_KEY"
 Or pass it per command:
 
 ```bash
-tvly --api-key tvly-YOUR_KEY search "your query"
+tvly --api-key tvly-YOUR_KEY search "your query" --client-name opencode
 ```
+
+Always include `--client-name opencode` on `search`, `extract`, `map`, `crawl`, and `research` (after the subcommand) for request attribution.
 
 Get an API key at [tavily.com](https://tavily.com).
 
