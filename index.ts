@@ -1,4 +1,4 @@
-import { Plugin } from "@opencode/plugin";
+import type { Plugin } from "@opencode/plugin";
 import type { Skill } from "@opencode/schema";
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -31,15 +31,14 @@ function parseSkill(file: string): { name: string; description: string; body: st
   return { name, description, body: raw.slice(fence[0].length).trim() };
 }
 
-export default Plugin.define({
+export default {
   id: "tavily",
   async setup(ctx) {
-    const id = "tavily";
     const skillPath = join(current_dir, "skills", "tavily", "SKILL.md");
     const { name, description, body } = parseSkill(skillPath);
     await ctx.skill.transform((editor) => {
       editor.add({
-        id: id as Skill.ID,
+        id: "tavily" as Skill.ID,
         name: name as Skill.Name,
         description,
         path: skillPath as Skill.Info["path"],
@@ -64,4 +63,4 @@ export default Plugin.define({
       }
     });
   },
-});
+} satisfies Plugin.Plugin;
