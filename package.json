@@ -34,7 +34,7 @@
     "check": "tsc --noEmit"
   },
   "devDependencies": {
-    "@opencode-ai/plugin": "^1.0.0",
+    "@opencode/plugin": "^2.0.0",
     "@types/node": "^22.0.0",
     "typescript": "^5.0.0"
   }
